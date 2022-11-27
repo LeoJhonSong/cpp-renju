@@ -128,7 +128,7 @@ class Board:
                 # 能形成五连, 检查这个黑子是否会触发禁手
                 temp_board = deepcopy(board)
                 temp_board[cy + (neighbour_position - c) * vec[1]][cx + (neighbour_position - c) * vec[0]] = board[cy][cx]
-                if not self.check_forbidden(temp_board, (cx + relative_distance * vec[0], cy + relative_distance * vec[1])):
+                if not self.check_forbidden(temp_board, (cx + (neighbour_position - c) * vec[0], cy + (neighbour_position - c) * vec[1])):
                     count += 1  # 这个地方落子能让黑子五连
         return count
 
