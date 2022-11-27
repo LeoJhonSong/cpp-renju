@@ -7,6 +7,7 @@
 #include <array>
 #include <iostream>
 
+// 其实只能伪随机
 int rand(int start, int end) {
     int x = end + 1;
     while (x > end) { x = start + std::rand() / ((RAND_MAX + 1u) / (end - start + 1)); }
