@@ -60,7 +60,7 @@ class Board {
         return copied_board;
     }
     // 重载Board类的[]运算符, 使其既可以用来访问元素也可以给元素赋值
-    std::string& operator[](Point p) {
+    std::string &operator[](Point p) {
         return this->board[p.y][p.x];
     }
 };

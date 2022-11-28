@@ -9,17 +9,18 @@
 
 namespace Game {
 struct Player_Info {
-    Player::Player* player; // 存指针或引用才可以有虚函数调用机制
+    Player::Player *player; // 存指针或引用才可以有虚函数调用机制
     unsigned int score = 0;
     Board::Point last = Board::Point(-1, -1);
-    Player_Info(Player::Player* _player) {
+    Player_Info(Player::Player *_player) {
         player = _player;
     }
 };
 class Game {
-    private:
+  private:
     Player::ManPlayer player1 = Player::ManPlayer("You");
     Player::ComputerPlayer player2 = Player::ComputerPlayer("Computer");
+
   public:
     Board::Board board;
     std::array<Player_Info, 2> players = {
@@ -48,9 +49,9 @@ class Game {
     Board::Side judge();
     ///
     ///@brief 检查黑方是否触发禁手. 有三种可能调用情况:
-    ///1. 电脑执白时调用检查黑方是否触发禁手
-    ///2. 电脑执黑时试下一子后调用进行自检
-    ///3. 玩家执白时声明黑方触发禁手, 游戏实例自调用进行检查
+    /// 1. 电脑执白时调用检查黑方是否触发禁手
+    /// 2. 电脑执黑时试下一子后调用进行自检
+    /// 3. 玩家执白时声明黑方触发禁手, 游戏实例自调用进行检查
     ///@param board 指定棋盘
     ///@param last 指定最后落的子
     ///@return true 黑方长连/双四/双三
@@ -94,7 +95,7 @@ class Game {
     ///@param c 指定点在截取到的点的数组中下标
     ///@return std::vector<std::string> 截取到的点的vector
     ///
-    std::vector<std::string> line_gen(Board::Board board, Board::Point vec, Board::Point center, int* c);
+    std::vector<std::string> line_gen(Board::Board board, Board::Point vec, Board::Point center, int *c);
     ///
     ///@brief 找到指定点棋子附近连续相同颜色棋子的左右边界与指定点棋子的相对距离
     ///
